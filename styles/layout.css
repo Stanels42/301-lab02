@@ -1,0 +1,34 @@
+header {
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  text-align: center;
+  margin: 10px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+/* font-family: 'Shrikhand', cursive; */
+section {
+  font-family: 'Shrikhand', cursive;
+  float: left;
+  width: 32%;
+  height: 400px;
+  text-align: center;
+  background-color: rgba(169, 169, 169, 0.404);
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+h2 {
+  margin: 5px;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  padding: 5px;
+}

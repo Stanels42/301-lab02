@@ -33,8 +33,7 @@ $('select').on('change', e => {
     $('#photo-template').hide();
   } else {
     $('section').hide();
-    let images = $(`.${selectedEvent}`).show();
-    console.log(images);
+    $(`.${selectedEvent}`).show();
   }
 });
 

@@ -1,0 +1,9 @@
+section {
+  outline: solid 2px black;
+}
+
+body {
+  width: 960px;
+  margin: 0 auto;
+  background: linear-gradient(144deg, rgba(255,0,0,1) 0%, rgba(179,0,255,1) 97%); 
+}
