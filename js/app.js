@@ -1,6 +1,6 @@
 
 
-function Horn (image_url, title, description, keyword, horns) {
+function Horn(image_url, title, description, keyword, horns) {
   this.image_url = image_url;
   this.title = title;
   this.description = description;
@@ -15,9 +15,8 @@ Horn.all = [];
 Horn.prototype.render = function () {
 
   const template = $('#photo-template').html();
-  console.log(template);
   const $newSection = $('<section></section>');
-
+  $newSection.attr('class', this.keyword);
   $newSection.html(template);
 
   $newSection.find('h2').text(this.title);
@@ -27,18 +26,51 @@ Horn.prototype.render = function () {
   $('main').append($newSection);
 };
 
+$('select').on('change', e => {
+  const selectedEvent = e.currentTarget.selectedOptions[0].innerText;
+  if (selectedEvent === 'Filter by Keyword') {
+    $('section').show();
+    $('#photo-template').hide();
+  } else {
+    $('section').hide();
+    let images = $(`.${selectedEvent}`).show();
+    console.log(images);
+  }
+});
+
+function getKeywords() {
+  const keywords = [];
+  Horn.all.forEach(value => {
+    let unique = true;
+    keywords.forEach(current => {
+      if (value.keyword === current) {
+        unique = false;
+      }
+    });
+    if (unique) {
+      keywords.push(value.keyword);
+    }
+  });
+  const select = $('select');
+  keywords.forEach(currentWord => {
+    const $newOption = $('<option></option>');
+    $newOption.text(currentWord);
+    select.append($newOption);
+  });
+}
+
 let load = () => {
 
   $.get('./page-1-data.json', (value) => {
 
-    value.forEach( horned => {
+    value.forEach(horned => {
 
-      console.log(horned);
-      let newHorn = new Horn (horned.image_url, horned.title, horned.description, horned.keyword, horned.horns);
+      let newHorn = new Horn(horned.image_url, horned.title, horned.description, horned.keyword, horned.horns);
       newHorn.render();
 
     });
-
+    $('#photo-template').hide();
+    getKeywords();
   });
 
 };
