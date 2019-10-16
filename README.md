@@ -17,7 +17,7 @@ Feature 2
 
 Estamated time: 45
 
-Start Time: 
-End Time: 
+Start Time: 10:05
+End Time: 12:00
 
-Actual Time: 
+Actual Time: 1 hour 55 minutes
