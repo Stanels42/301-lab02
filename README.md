@@ -21,3 +21,14 @@ Start Time: 10:05
 End Time: 12:00
 
 Actual Time: 1 hour 55 minutes
+
+-------------------------------------
+
+Feature 3 Styling
+
+Estamated time: 30
+
+Start Time: 12:05
+End Time: 12:25
+
+Actual Time: 20 min
