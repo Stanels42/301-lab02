@@ -43,3 +43,16 @@ Start Time: 9:10
 End Time: 9:35
 
 Actual Time: 25 min
+
+-------------------------
+
+Feature 2 Templating
+
+Estamated time: 45 min
+
+Start Time: 9:40
+End Time: 10:00
+
+Actual Time: 20 min
+
+-------------------------
