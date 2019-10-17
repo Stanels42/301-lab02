@@ -27,12 +27,51 @@ Horn.prototype.render = function () {
 
   // $('main').append($newSection);
 
-  var source   = $("#photo-template").html();
+  var source = $("#photo-template").html();
   var template = Handlebars.compile(source);
   $('main').append(template(this));
 };
 
-$('select').on('change', function () {
+$('#sortSelect').on('change', function () {
+  const selectedEvent = $(this).val();
+  if (selectedEvent === 'name') {
+    Horn.all.sort((a, b) => {
+      if (a.title > b.title) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  } else if (selectedEvent === 'number') {
+    Horn.all.sort((a, b) => {
+      console.log(a.horns, b.horns);
+      if (a.horns > b.horns) {
+        return 1;
+      } else if (a.horns === b.horns) {
+        // if (a.title > b.title) {
+          return 0;
+        // } else {
+          // return -1;
+        // }
+      
+      } else {
+        return 0;
+      }
+    });
+  }
+  console.log(Horn.all);
+  // clear display
+  let $oldImages = $('section');
+
+  $oldImages.remove();
+  // re-display
+  Horn.all.forEach(horn => {
+    horn.render();
+  });
+});
+
+
+$('#keywordSelect').on('change', function () {
   const selectedEvent = $(this).val();
   if (selectedEvent === 'default') {
     $('section').show();
@@ -56,10 +95,11 @@ function getKeywords() {
       keywords.push(value.keyword);
     }
   });
-  const select = $('select');
+  const select = $('#keywordSelect');
   keywords.forEach(currentWord => {
     const $newOption = $('<option></option>');
     $newOption.text(currentWord);
+    $newOption.attr('class', 'keywordOption');
     select.append($newOption);
   });
 }
@@ -68,8 +108,7 @@ $('button').on('click', function () {
 
   let $oldImages = $('section');
 
-  let $oldOptions = $('option');
-  $oldOptions.splice(0, 1);
+  let $oldOptions = $('.keywordOption');
 
   $oldImages.remove();
   $oldOptions.remove();
@@ -79,9 +118,11 @@ $('button').on('click', function () {
 
 let load = () => {
 
+  Horn.all = [];
+
   let dataset;
 
-  if(page1) {
+  if (page1) {
     dataset = './page-1.json';
     page1 = false;
   } else {
