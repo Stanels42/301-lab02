@@ -71,6 +71,16 @@ Feature 3 Flex Style
 Estamated time: 45 min
 
 Start Time: 10:25
-End Time: 
+End Time: 10:45
 
-Actual Time:  min
+Actual Time:  20min
+
+-------------------------
+Feature 4 Sort
+
+Estamated time: 1 Hr
+
+Start Time: 10:50
+End Time: 11:40
+
+Actual Time:  50min
