@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>The Gallery of Horns</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="https://fonts.googleapis.com/css?family=Cinzel|Shrikhand&display=swap" rel="stylesheet">z 
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/module.css">
-  </head>
-  <body>
-    <header>
-      <h1>The Gallery of Horns</h1>
-      <button>Switch Page</button>
-      <select>
-        <option value="default">Filter by Keyword</option>
-      </select>
-    </header>
-    <main>
-      <section id="photo-template">
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
+
+<head>
+  <title>The Gallery of Horns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/module.css">
+
+  <script id="photo-template" type="text/x-handlebars-template">
+      <section class={{keyword}}>
+        <h2> {{title}} </h2>
+        <img src="{{image_url}}" alt="">
+        <p>{{description}}</p>
       </section>
-    </main>
-    <footer>
-      © 2018 Code Fellows
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+     
+    </script>
+
+</head>
+
+<body>
+  <header>
+    <h1>The Gallery of Horns</h1>
+    <button>Switch Page</button>
+    <select>
+      <option value="default">Filter by Keyword</option>
+    </select>
+  </header>
+  <main>
+  </main>
+  <footer>
+    © 2018 Code Fellows
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
 </html>

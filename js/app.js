@@ -16,16 +16,20 @@ Horn.all = [];
 // photo-template
 Horn.prototype.render = function () {
 
-  const template = $('#photo-template').html();
-  const $newSection = $('<section></section>');
-  $newSection.attr('class', this.keyword);
-  $newSection.html(template);
+  // const template = $('#photo-template').html();
+  // const $newSection = $('<section></section>');
+  // $newSection.attr('class', this.keyword);
+  // $newSection.html(template);
 
-  $newSection.find('h2').text(this.title);
-  $newSection.find('p').text(this.description);
-  $newSection.find('img').attr('src', this.image_url);
+  // $newSection.find('h2').text(this.title);
+  // $newSection.find('p').text(this.description);
+  // $newSection.find('img').attr('src', this.image_url);
 
-  $('main').append($newSection);
+  // $('main').append($newSection);
+
+  var source   = $("#photo-template").html();
+  var template = Handlebars.compile(source);
+  $('main').append(template(this));
 };
 
 $('select').on('change', function () {
@@ -63,7 +67,6 @@ function getKeywords() {
 $('button').on('click', function () {
 
   let $oldImages = $('section');
-  $oldImages.splice(0, 1);
 
   let $oldOptions = $('option');
   $oldOptions.splice(0, 1);
