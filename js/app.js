@@ -16,17 +16,6 @@ Horn.all = [];
 // photo-template
 Horn.prototype.render = function () {
 
-  // const template = $('#photo-template').html();
-  // const $newSection = $('<section></section>');
-  // $newSection.attr('class', this.keyword);
-  // $newSection.html(template);
-
-  // $newSection.find('h2').text(this.title);
-  // $newSection.find('p').text(this.description);
-  // $newSection.find('img').attr('src', this.image_url);
-
-  // $('main').append($newSection);
-
   var source = $("#photo-template").html();
   var template = Handlebars.compile(source);
   $('main').append(template(this));
@@ -48,14 +37,13 @@ $('#sortSelect').on('change', function () {
       if (a.horns > b.horns) {
         return 1;
       } else if (a.horns === b.horns) {
-        // if (a.title > b.title) {
-          return 0;
-        // } else {
-          // return -1;
-        // }
-      
+        if (a.title > b.title) {
+          return 1;
+        } else {
+          return -1;
+        }
       } else {
-        return 0;
+        return -1;
       }
     });
   }
