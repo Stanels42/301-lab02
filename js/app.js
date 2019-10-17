@@ -1,4 +1,4 @@
-
+'use strict'
 
 function Horn(image_url, title, description, keyword, horns) {
   this.image_url = image_url;
@@ -26,8 +26,8 @@ Horn.prototype.render = function () {
   $('main').append($newSection);
 };
 
-$('select').on('change', e => {
-  const selectedEvent = e.currentTarget.selectedOptions[0].innerText;
+$('select').on('change', function () {
+  const selectedEvent = $(this).val();
   if (selectedEvent === 'Filter by Keyword') {
     $('section').show();
     $('#photo-template').hide();
@@ -60,7 +60,7 @@ function getKeywords() {
 
 let load = () => {
 
-  $.get('./page-1-data.json', (value) => {
+  $.get('./page-1.json', (value) => {
 
     value.forEach(horned => {
 
