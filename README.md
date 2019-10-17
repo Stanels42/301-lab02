@@ -56,3 +56,11 @@ End Time: 10:00
 Actual Time: 20 min
 
 -------------------------
+Feature 3 Flex Style
+
+Estamated time: 45 min
+
+Start Time: 10:05
+End Time: 10:20
+
+Actual Time: 15 min

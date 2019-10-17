@@ -1,0 +1,32 @@
+header {
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  text-align: center;
+  margin: 10px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+main {
+  width:960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section {
+  width: 32%;
+  height: 400px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: 'Shrikhand', cursive;
+  background-color: rgba(169, 169, 169, 0.404);
+
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
