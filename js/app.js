@@ -1,5 +1,7 @@
 'use strict'
 
+let page1 = true;
+
 function Horn(image_url, title, description, keyword, horns) {
   this.image_url = image_url;
   this.title = title;
@@ -28,7 +30,7 @@ Horn.prototype.render = function () {
 
 $('select').on('change', function () {
   const selectedEvent = $(this).val();
-  if (selectedEvent === 'Filter by Keyword') {
+  if (selectedEvent === 'default') {
     $('section').show();
     $('#photo-template').hide();
   } else {
@@ -58,9 +60,33 @@ function getKeywords() {
   });
 }
 
+$('button').on('click', function () {
+
+  let $oldImages = $('section');
+  $oldImages.splice(0, 1);
+
+  let $oldOptions = $('option');
+  $oldOptions.splice(0, 1);
+
+  $oldImages.remove();
+  $oldOptions.remove();
+
+  load();
+});
+
 let load = () => {
 
-  $.get('./page-1.json', (value) => {
+  let dataset;
+
+  if(page1) {
+    dataset = './page-1.json';
+    page1 = false;
+  } else {
+    dataset = './page-2.json';
+    page1 = true;
+  }
+
+  $.get(dataset, (value) => {
 
     value.forEach(horned => {
 

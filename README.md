@@ -32,3 +32,14 @@ Start Time: 12:05
 End Time: 12:25
 
 Actual Time: 20 min
+
+---------------DAY 2---------------
+
+Feature 1 Pagination
+
+Estamated time: 1 hr
+
+Start Time: 9:10
+End Time: 9:35
+
+Actual Time: 25 min
