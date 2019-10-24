@@ -1,9 +1,28 @@
+body{
+  background: linear-gradient(144deg, rgb(0, 255, 0) 0%, rgb(8, 46, 88) 97%); 
+
+  
+  margin: 0 auto;
+  width: 500px;
+}
+
 section {
   outline: solid 2px black;
 }
 
-body {
-  width: 960px;
-  margin: 0 auto;
-  background: linear-gradient(144deg, rgba(255,0,0,1) 0%, rgba(179,0,255,1) 97%); 
+@media (min-width: 660px) and (max-width:959px) {
+  body {
+    width: 660px;
+    background: linear-gradient(144deg, rgb(255, 145, 0) 0%, rgb(255, 0, 170) 97%); 
+
+  }
+}
+
+@media (min-width: 960px){
+
+
+  body {
+    width: 960px;
+    background: linear-gradient(144deg, rgba(255,0,0,1) 0%, rgba(179,0,255,1) 97%); 
+  }
 }

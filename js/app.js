@@ -33,7 +33,7 @@ $('#sortSelect').on('change', function () {
     });
   } else if (selectedEvent === 'number') {
     Horn.all.sort((a, b) => {
-      console.log(a.horns, b.horns);
+
       if (a.horns > b.horns) {
         return 1;
       } else if (a.horns === b.horns) {
@@ -47,7 +47,7 @@ $('#sortSelect').on('change', function () {
       }
     });
   }
-  console.log(Horn.all);
+
   // clear display
   let $oldImages = $('section');
 
@@ -128,6 +128,7 @@ let load = () => {
     });
     $('#photo-template').hide();
     getKeywords();
+    $('#sortSelect').trigger('change');
   });
 
 };
