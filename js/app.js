@@ -128,6 +128,7 @@ let load = () => {
     });
     $('#photo-template').hide();
     getKeywords();
+    $('#sortSelect').trigger('change');
   });
 
 };
